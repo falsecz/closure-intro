@@ -1,0 +1,19 @@
+<script type="text/javascript">
+goog.require('goog.dom');
+goog.require('goog.events');
+goog.require('goog.ui.Component.EventType');
+
+goog.require('%componentName%');
+</script>
+
+<div id="%componentNameCSS%" style="width:500px; height:500px"></div>
+
+<style type="text/css">
+</style>
+
+<script type="text/coffeescript">
+
+sel = new %componentName%
+sel.render goog.dom.getElement '%componentNameCSS%'
+
+</script>
