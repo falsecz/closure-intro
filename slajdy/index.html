@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>node.js @ socialbakers</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Lukáš Weber">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/socialbakers.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/tomorrow-night.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>closure @ socialbakers</h1>
+					<p>lukas.(benes|weber)@socialbakers.com</p>
+				</section>
+
+				<section>
+					<h2>Closure</h2>
+					<ul>
+						<li class="fragment">open source od Google</li>
+						<li class="fragment">sada nástrojů</li>
+						<li class="fragment">není framework</li>
+						<li class="fragment">developers.google.com/closure</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Proč Closure</h2>
+					<ul>
+						<li class="fragment">oddělení logiky aplikace od DOM</li>
+						<li class="fragment">redukuje špagety (jQuery přístup)</li>
+						<li class="fragment">kompletní stack</li>
+						<li class="fragment">odladěnost a výkon</li>
+						<li class="fragment">Google</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Proč Clousure ne</h2>
+					<ul>
+						<li class="fragment">učící křivka</li>
+						<li class="fragment">málo zdrojů</li>
+						<li class="fragment">příliš malý projekt</li>
+						<li class="fragment">one man show (backbone.js, angular.js)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Closure</h2>
+					<ul>
+						<li class="fragment">Library</li>
+						<li class="fragment">Templates</li>
+						<li class="fragment">Compiler</li>
+						<li class="fragment">Linter</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Library</h2>
+					<ul>
+						<li class="fragment">goog.Disposable - správa paměti</li>
+						<li class="fragment">goog.EventTarget - model událostí</li>
+						<li class="fragment">utility goog.(string|array|object)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Library</h2>
+					<ul>
+						<li class="fragment">namespaces (goog.provide, goog.require)</li>
+						<li class="fragment">DOM Level 2 Events</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Library - Net</h2>
+					<ul>
+						<li class="fragment">Xhr, XhrPool, XhrManager</li>
+						<li class="fragment">TTL, Fronty atd.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Library - UI</h2>
+					<ul>
+						<li class="fragment">Strom komponent</li>
+						<li class="fragment">Knihovna + API</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Library - goog.ui.Component</h2>
+					<ul>
+						<li class="fragment">zajištuje oblsuhu stromu</li>
+						<li class="fragment">životní cyklus komponent</li>
+						<li class="fragment">základní helpery (EventHandler, DOMHelper)</li>
+						<li class="fragment">renderování/dekorace</li>
+					</ul>
+				</section>
+				
+				<section>
+					<img src="./n/lifecycle.png" height="600px" />
+				</section>
+
+				<section>
+					<h2>Library - goog.ui.Control</h2>
+					<ul>
+						<li class="fragment">reakce na vstup</li>
+						<li class="fragment">auto-states</li>
+						<li class="fragment">handle* metody</li>
+						<li class="fragment">další helpery</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Templates</h2>
+					<ul>
+						<li class="fragment">záměrně velice omezené</li>
+						<li class="fragment">podpora namespaces</li>
+						<li class="fragment">java/javascript/python*</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Compiler</h2>
+					<ul>
+						<li class="fragment">minimalizace kódu</li>
+						<li class="fragment">sestavení podle namespace (provide/require)</li>
+						<li class="fragment">několik módu kompilace (whitespace, simple, advanced)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Linter</h2>
+					<ul>
+						<li class="fragment">code style checker</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Náš dev stack</h2>
+					<ul>
+						<li class="fragment">CoffeeScript (BeerScript --google)</li>
+						<li class="fragment">node.js demon rekompilace/dema</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Děkujeme</h2>
+					<h3>Q&A?</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					//{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					//{ src: '/socket.io/socket.io.js', async: true },
+					//{ src: 'plugin/notes-server/client.js', async: true },
+					//{ src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

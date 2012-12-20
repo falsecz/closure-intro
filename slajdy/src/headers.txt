@@ -1,0 +1,44 @@
+{
+method: GET
+url: '/api/hello?all=test'
+headers: 
+	Accept: 'text/plain'
+	Cookie: USER_ID=12345:AUTH_TOKEN=a3ef234
+}
+
+-- cookie parser middleware --
+method: GET
+url: '/api/hello?all=test'
+headers: 
+	Accept: 'text/plain'
+	Cookie: USER_ID=12345:AUTH_TOKEN=a3ef234
+cookies: 
+	USER_ID: 12345
+	AUTH_TOKEN: a3ef234
+
+-- GET params middleware --
+method: GET
+url: '/api/hello?all=test'
+headers: 
+	Accept: 'text/plain'
+	Cookie: USER_ID=12345:AUTH_TOKEN=a3ef234
+cookies: 
+	USER_ID: 12345
+	AUTH_TOKEN: a3ef234
+params:
+	all: 'test'
+
+-- auth middleware --
+method: GET
+url: '/api/hello?all=test'
+headers: 
+	Accept: 'text/plain'
+	Cookie: USER_ID=12345:AUTH_TOKEN=a3ef234
+cookies: 
+	USER_ID: 12345
+	AUTH_TOKEN: a3ef234
+params:
+	all: 'test'
+auth_user:
+	id: 12345
+	username: franta
